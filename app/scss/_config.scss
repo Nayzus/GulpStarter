@@ -1,0 +1,95 @@
+// USER VARIABLES SECTION
+
+$accent: #fff0c9; // Accent Color
+$fontsize: 14px; // Body Font Size
+$textcolor: #1d1d1b;; // Text Color
+$yellow: #ffed00;
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$roboto: Roboto, sans-serif; // Roboto Font Family
+	$montserrat: Montserrat, sans-serif;// Montserrat Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px;
+$gutter: $grid-gutter-width;
+$grid-columns:      16;
+$grid-breakpoints: (
+	// Extra small screen / phone
+				xs: 0,
+	// Small screen / phone
+				sm: 576px,
+	// Medium screen / tablet
+				md: 768px,
+	// Large screen / desktop
+				lg: 992px,
+	// Extra large screen / wide desktop
+				xl: 1200px,
+
+				xxl: 1630px
+);
+$container-max-widths: (
+				sm: 540px,
+				md: 720px,
+				lg: 960px,
+				xl: 1200px,
+				xxl: 1570px
+);
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+//Css file//
+@import '../../node_modules/owl.carousel2/dist/assets/owl.carousel.css';
+@import '../../node_modules/owl.carousel2/dist/assets/owl.theme.default.css';
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		// font-display: swap; // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
+@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+	color: $textcolor;
+}
+
+::selection {
+	background-color: $accent;
+	color: $textcolor;
+}
+
+input, textarea {
+	outline: none;
+	&:focus:required:invalid { border-color: red }
+	&:required:valid { border-color: green }
+}
+
+body {
+	font-family: $roboto;
+	font-size: $fontsize;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.5;
+	overflow-x: hidden;
+	color: $textcolor;
+}
+h1,h2 {
+	font-weight: 600;
+	font-size: 35px;
+	color: $textcolor;
+	font-family: $montserrat;
+}
