@@ -2,32 +2,35 @@
 
 $accent: #fff0c9; // Accent Color
 $fontsize: 14px; // Body Font Size
-$textcolor: #1d1d1b;; // Text Color
+$textcolor: #1d1d1b;
+; // Text Color
 $yellow: #ffed00;
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
-$roboto: Roboto, sans-serif; // Roboto Font Family
+$proxima: Proxima, sans-serif; // Roboto Font Family
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 30px;
 $gutter: $grid-gutter-width;
-$grid-columns:      16;
+$grid-columns: 12;
 $grid-breakpoints: (
-	// Extra small screen / phone
-				xs: 0,
-	// Small screen / phone
-				sm: 576px,
-	// Medium screen / tablet
-				md: 768px,
-	// Large screen / desktop
-				lg: 992px,
-	// Extra large screen / wide desktop
-				xl: 1200px
+    // Extra small screen / phone
+        xs: 0,
+    // Small screen / phone
+        sm: 576px,
+    // Medium screen / tablet
+        md: 768px,
+    // Large screen / desktop
+        lg: 992px,
+    // Extra large screen / wide desktop
+        xl: 1200px,
+        xxl: 1360px
 );
 $container-max-widths: (
-				sm: 540px,
-				md: 720px,
-				lg: 960px,
-				xl: 1200px
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1200px,
+        xxl: 1360px
 );
 
 // IMPORT SECTION
@@ -39,45 +42,51 @@ $container-max-widths: (
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
 
-
 // FONTS LOAD SECTION
 
 @mixin font($fname, $fstyle, $fweight, $furl) {
-	@font-face {
-		font-family: $fname;
-		font-style: $fstyle;
-		font-weight: $fweight;
-		// font-display: swap; // Uncomment to initially display system fonts
-		src: local($fname), url($furl) format('woff2');
-	}
+    @font-face {
+        font-family: $fname;
+        font-style: $fstyle;
+        font-weight: $fweight;
+        // font-display: swap; // Uncomment to initially display system fonts
+        src: local($fname), url($furl) format('woff2');
+    }
 }
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
+@include font('Proxima', normal, 400, '../fonts/ProximaNova-Regular.woff2');
+@include font('Proxima', normal, 600, '../fonts/ProximaNova-Semibold.woff2');
+@include font('Proxima', normal, 700, '../fonts/ProximaNova-Bold.woff2');
 
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-	color: $textcolor;
+    color: $textcolor;
 }
 
 ::selection {
-	background-color: $accent;
-	color: $textcolor;
+    background-color: $accent;
+    color: $textcolor;
 }
 
 input, textarea {
-	outline: none;
-	&:focus:required:invalid { border-color: red }
-	&:required:valid { border-color: green }
+    outline: none;
+
+    &:focus:required:invalid {
+        border-color: red
+    }
+
+    &:required:valid {
+        border-color: green
+    }
 }
 
 body {
-	font-family: $roboto;
-	font-size: $fontsize;
-	min-width: 320px;
-	position: relative;
-	line-height: 1.5;
-	overflow-x: hidden;
-	color: $textcolor;
+    font-family: $proxima;
+    font-size: $fontsize;
+    min-width: 320px;
+    position: relative;
+    line-height: 1.5;
+    overflow-x: hidden;
+    color: $textcolor;
 }

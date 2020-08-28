@@ -6351,7 +6351,7 @@ body {
   -webkit-transition: background-position .5s ease-out;
   -o-transition: background-position .5s ease-out;
   transition: background-position .5s ease-out;
-  background-size: 140%;
+  background-size: 110%;
   min-height: 800px;
   height: 100vh;
   position: relative;

@@ -1,5 +1,109 @@
 @import 'config';
 
+#header {
+    background: url(../images/dest/bg_main@2x.jpg) no-repeat;
+    transition: background-position .5s ease-out;
+    background-size: 140%;
+    min-height: 800px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .header__logo {
+        padding-top: 150px;
+        text-align: center;
+        img {
+            max-width: 347px;
+            margin: 0 auto;
+        }
+    }
+
+    .header__info {
+        position: relative;
+        top: -80px;
+        text-align: center;
+        h1 {
+            text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-family: $proxima;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        p {
+            text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-family: $proxima;
+            font-size: 24px;
+            font-weight: 600;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.1;
+        }
+    }
+    .btn_container {
+        text-align: center;
+        padding-top: 40px;
+        .btn {
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            background-color: #0078d4;
+            text-decoration: none;
+            color: #ffffff;
+            font-family: $proxima;
+            font-size: 24px;
+            font-weight: 600;
+            padding: 13px 26px;
+            transition: all .2s;
+            &:hover {
+                background: #fff;
+                color: #333;
+                transition: all .2s;
+            }
+
+        }
+    }
+    #mouse_scroll {
+        position: absolute;
+        bottom: 30px;
+        left: calc(50% - 15px);
+        animation-name: pulse;
+        -webkit-animation-name: pulse;
+
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+            -webkit-transform: scale(0.95);
+            opacity: 0.8;
+        }
+        50% {
+            -webkit-transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: scale(0.95);
+            opacity: 0.8;
+        }
+    }
+}
 
 
 
